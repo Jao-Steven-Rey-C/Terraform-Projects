@@ -9,6 +9,6 @@ resource "aws_s3_bucket" "eu_west_1" {
 }
 
 resource "aws_s3_bucket" "us_east_1" {
-  bucket   = "my-18736481364"
+  bucket   = "my-bucket-18736481364"
   provider = aws.us-east
 }
