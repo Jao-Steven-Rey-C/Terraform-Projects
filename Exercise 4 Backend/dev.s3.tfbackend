@@ -1,0 +1,4 @@
+#No actual purpose in the code. Just an illustration.
+bucket = "state-bucket-202100881"
+key    = "Exercise 4 Backend/dev/terraform.tfstate"
+region = "ap-southeast-1"
