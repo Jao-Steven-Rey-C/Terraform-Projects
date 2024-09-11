@@ -1,3 +1,7 @@
+data "aws_caller_identity" "current" {} //C7: E4 and E5 code.
+data "aws_region" "current" {}
+
+
 data "aws_ami" "Ubuntu" {
   most_recent = true
   owners      = ["099720109477"] //Must be the resource owner's ID.
@@ -18,7 +22,7 @@ data "aws_ami" "Ubuntu" {
   }
 }
 
-resource "aws_instance" "Ubuntu_EC2" {
+/*resource "aws_instance" "Ubuntu_EC2" {
   associate_public_ip_address = true
   ami                         = data.aws_ami.Ubuntu.id
   instance_type               = "t2.micro"
@@ -36,4 +40,4 @@ resource "aws_instance" "Ubuntu_EC2" {
   tags = {
     Name = "Ubuntu_EC2"
   }
-}
+}*/
