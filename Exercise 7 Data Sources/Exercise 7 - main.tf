@@ -1,6 +1,9 @@
-data "aws_caller_identity" "current" {} //C7: E4 and E5 code.
+data "aws_caller_identity" "current" {}
 data "aws_region" "current" {}
 
+data "aws_region" "Oregon" {
+  provider = aws.Oregon //If you want to return data from another region.
+}
 
 data "aws_ami" "Ubuntu" {
   most_recent = true
@@ -19,6 +22,33 @@ data "aws_ami" "Ubuntu" {
   filter {
     name   = "virtualization-type"
     values = ["hvm"]
+  }
+}
+
+data "aws_vpc" "prod_vpc" { //Finds an existing VPC whose tag's Env value is "Prod".
+  tags = {
+    Env = "Prod"
+  }
+}
+
+data "aws_availability_zones" "available" {
+  state = "available"
+}
+
+data "aws_iam_policy_document" "allow_all_get" {
+  statement {
+    sid = "allow_all_to_get"
+
+    principals {
+      type        = "*"
+      identifiers = ["*"]
+    }
+
+    actions = ["s3:GetObject"]
+
+    resources = [
+      "arn:aws:s3:::*/*", //This is very permissive. Don't do this.
+    ]
   }
 }
 
