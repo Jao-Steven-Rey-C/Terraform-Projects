@@ -6,7 +6,6 @@
 variable "ec2_instance_type" {
   description = "The instance type for the EC2 instances"
   type        = string
-  default     = "t2.micro"
 
   validation {
     condition     = contains(["t2.micro", "t3.micro"], var.ec2_instance_type)
