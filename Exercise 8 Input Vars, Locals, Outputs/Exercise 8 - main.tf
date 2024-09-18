@@ -1,4 +1,5 @@
-data "aws_ami" "Ubuntu" {
+# EC2
+/*data "aws_ami" "Ubuntu" {
   most_recent = true
   owners      = ["099720109477"] //Must be the resource owner's ID.
 
@@ -28,8 +29,20 @@ resource "aws_instance" "Ubuntu_EC2" {
     volume_type           = var.ec2_volume_config.type
   }
 
-  tags = merge(var.additional_tags, {
-    Name      = "Ubuntu_EC2"
-    ManagedBy = "Terraform"
+  tags = merge(var.additional_tags, local.common_tags, {
+    Name = "Ubuntu_EC2"
   })
+}*/
+
+# S3
+resource "random_string" "bucket_string" {
+  length  = 6
+  special = false
+  upper   = false
+}
+
+resource "aws_s3_bucket" "project_bucket" {
+  bucket = "${local.project}-${random_string.bucket_string.id}"
+
+  tags = merge(var.additional_tags, local.common_tags)
 }

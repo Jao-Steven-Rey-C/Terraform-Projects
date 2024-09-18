@@ -1,11 +1,6 @@
-/*variable "aws_region" {
-  type        = string //It is good practice to always specify the type of variable.
-  default     = "eu-west-3"
-}*/
-
 variable "ec2_instance_type" {
   description = "The instance type for the EC2 instances"
-  type        = string
+  type        = string //It is good practice to always specify the type of variable.
 
   validation {
     condition     = contains(["t2.micro", "t3.micro"], var.ec2_instance_type)
@@ -32,4 +27,9 @@ variable "additional_tags" {
 
   type    = map(string)
   default = {}
+}
+
+variable "my_sensitive_value" {
+  type      = string
+  sensitive = true //Both, variables and outputs can be set to "sensitive".
 }
