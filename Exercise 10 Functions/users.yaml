@@ -1,0 +1,5 @@
+users:
+- name: Steven
+  group: writer
+- name: Austine
+  group: leader
