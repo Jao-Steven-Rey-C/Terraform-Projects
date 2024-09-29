@@ -58,7 +58,7 @@ resource "aws_instance" "EC2-from-map" {
   ami           = local.ami_ids[each.value.ami] //Accesses string value from map.
   instance_type = each.value.instance_type      //Accesses first item in variable map which is "t2.micro".
 
-  subnet_id = aws_subnet.main[each.value.subnet_name].id //Equally distributes the 4 EC2's across the existing subnets in a Round Robin fashion.
+  subnet_id = aws_subnet.main[each.value.subnet_name].id //Finds object in subnet that matches string.
 
   tags = {
     Project = local.project

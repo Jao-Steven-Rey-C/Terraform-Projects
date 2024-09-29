@@ -17,6 +17,6 @@ resource "aws_subnet" "main" {
   tags = {
     Project = local.project
     //Name    = "${local.project}-${count.index}" //If from list.
-    Name = "${local.project}-${each.key}"
+    Name = "${local.project}-${each.key}" //If from map.
   }
 }
