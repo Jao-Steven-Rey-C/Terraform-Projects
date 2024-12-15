@@ -15,18 +15,13 @@ variable "ec2_volume_config" {
     size = number
     type = string //Volume type for our EC2.
   })
-
-  default = { //Default values
-    size = 10
-    type = "gp3"
-  }
 }
 
 variable "additional_tags" {
   description = "Additional tags for our EC2 instance."
+  default     = {}
 
   type    = map(string)
-  default = {}
 }
 
 variable "my_sensitive_value" {

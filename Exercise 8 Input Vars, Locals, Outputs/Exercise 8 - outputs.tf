@@ -1,7 +1,7 @@
-/*output "EC2_info" {
-  EC2_IP        = aws_instance.Ubuntu_EC2.public_ip
-  Ubuntu_AMI_ID = data.aws_ami.Ubuntu.id
-}*/
+# output "EC2_info" {
+#   EC2_IP        = aws_instance.Ubuntu_EC2.public_ip
+#   Ubuntu_AMI_ID = data.aws_ami.Ubuntu.id
+# }
 
 output "s3_bucket_name" {
   sensitive   = true
