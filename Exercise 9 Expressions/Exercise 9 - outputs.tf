@@ -19,11 +19,11 @@ output "all_info" {
     #Lists + Maps
     users_map          = local.users_map //List to map
     users_map2         = local.users_map2
-    Steven_roles       = local.users_map2[var.Steven_Roles].roles //Role of specific user
+    # Steven_roles       = local.users_map2[var.Steven_Roles].roles //Role of specific user
     usernames_from_map = local.usernames_from_map                 //Map to list
 
     #Splat Expressions
-    splat_firstnames = local.splat_firstnames
-    splat_roles      = local.splat_roles
+    # splat_firstnames = local.splat_firstnames
+    # splat_roles      = local.splat_roles
   }
 }
