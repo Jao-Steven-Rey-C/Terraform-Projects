@@ -52,22 +52,22 @@ data "aws_iam_policy_document" "allow_all_get" {
   }
 }
 
-/*resource "aws_instance" "Ubuntu_EC2" {
-  associate_public_ip_address = true
-  ami                         = data.aws_ami.Ubuntu.id
-  instance_type               = "t2.micro"
+# resource "aws_instance" "Ubuntu_EC2" {
+#   associate_public_ip_address = true
+#   ami                         = data.aws_ami.Ubuntu.id
+#   instance_type               = "t2.micro"
 
-  root_block_device {
-    delete_on_termination = true
-    volume_size           = 10 //gigabytes
-    volume_type           = "gp3"
-  }
+#   root_block_device {
+#     delete_on_termination = true
+#     volume_size           = 10 //gigabytes
+#     volume_type           = "gp3"
+#   }
 
-  lifecycle {
-    create_before_destroy = true
-  }
+#   lifecycle {
+#     create_before_destroy = true
+#   }
 
-  tags = {
-    Name = "Ubuntu_EC2"
-  }
-}*/
+#   tags = {
+#     Name = "Ubuntu_EC2"
+#   }
+# }
