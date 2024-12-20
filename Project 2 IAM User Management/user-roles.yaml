@@ -1,0 +1,12 @@
+users:
+- username: Skibidi
+  roles: [admin, auditor]
+
+- username: Rizzler
+  roles: [readonly, developer]
+
+- username: Hawk_Tuah_Girl
+  roles: [readonly]
+
+#   Roles vs Groups: In roles, you can only assume one role at a time. In groups, you can assume all the roles in the list.
+#   For example, if roles is used, Skibidi can ONLY be either an admin or an auditor whereas in groups, he can be both at the same time.
